@@ -119,7 +119,7 @@ section{padding:clamp(36px,6vw,64px) 0}
 .proj:hover{border-color:var(--border-hover);background:var(--card-hover);transform:translateY(-4px);box-shadow:var(--shadow)}
 .proj:hover::before{opacity:1}
 .proj .top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
-.proj h3{font-size:1.12rem;font-weight:700;letter-spacing:-.01em;font-family:'JetBrains Mono',monospace}
+.proj h3{font-size:1.12rem;font-weight:700;letter-spacing:-.01em;font-family:'JetBrains Mono',monospace;overflow-wrap:break-word;word-break:break-word;min-width:0}
 .badge{
   font-size:.72rem;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap;
   font-family:'JetBrains Mono',monospace;
@@ -147,6 +147,8 @@ section{padding:clamp(36px,6vw,64px) 0}
   border-radius:19px;padding:clamp(24px,4vw,38px);
   display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(20px,4vw,40px);
 }
+.featured .inner>div{min-width:0}
+.featured h3,.featured .tagline,.featured p,.featured .flow li{overflow-wrap:break-word;word-break:break-word}
 .featured .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
 .featured h3{font-family:'JetBrains Mono',monospace;font-size:clamp(1.4rem,3vw,1.9rem);font-weight:700;margin-bottom:6px;letter-spacing:-.01em}
 .featured .tagline{color:var(--accent);font-weight:600;margin-bottom:16px}
