@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ru" class="lang-ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Александр Бережанский — SLICK</title>
+<meta name="description" content="Александр Бережанский (SLICK) — инженер автоматизации, AI-агентов и QA. Портфолио проектов.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0b0f;
+  --bg-2:#111319;
+  --card:#14161d;
+  --card-hover:#191c25;
+  --border:#242833;
+  --border-hover:#3a4152;
+  --text:#e7e9ee;
+  --muted:#9aa1b1;
+  --dim:#6b7280;
+  --accent:#7c9cff;
+  --accent-2:#a78bfa;
+  --green:#4ade80;
+  --amber:#fbbf24;
+  --shadow:0 8px 30px rgba(0,0,0,.35);
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(124,156,255,.10), transparent 60%),
+    radial-gradient(1000px 500px at -10% 10%, rgba(167,139,250,.10), transparent 55%),
+    var(--bg);
+  color:var(--text);
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.lang-ru .en{display:none}
+.lang-en .ru{display:none}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
+code,.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+
+.topbar{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(12px);
+  background:rgba(10,11,15,.72);
+  border-bottom:1px solid var(--border);
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.02em}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 14px var(--accent)}
+.brand span.mono{color:var(--muted);font-weight:500;font-size:.92rem}
+.lang-toggle{display:flex;border:1px solid var(--border);border-radius:999px;overflow:hidden;background:var(--bg-2)}
+.lang-toggle button{
+  background:none;border:none;color:var(--muted);cursor:pointer;
+  font-family:inherit;font-weight:600;font-size:.85rem;padding:7px 14px;transition:.2s;
+}
+.lang-toggle button.active{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0a0b0f}
+
+.hero{padding:clamp(48px,9vw,96px) 0 clamp(32px,5vw,48px)}
+.hero .eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--accent);
+  border:1px solid var(--border);background:var(--bg-2);
+  padding:6px 12px;border-radius:999px;margin-bottom:22px;
+}
+.hero h1{
+  font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;font-weight:800;letter-spacing:-.02em;
+  margin-bottom:16px;
+}
+.hero h1 .accent{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .role{font-size:clamp(1.05rem,2.6vw,1.4rem);color:var(--text);font-weight:600;margin-bottom:18px}
+.hero .role .sub{color:var(--muted);font-weight:400}
+.hero .bio{color:var(--muted);max-width:640px;font-size:1.02rem;margin-bottom:28px}
+.hero .bio b{color:var(--text);font-weight:600}
+
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:11px 18px;border-radius:12px;font-weight:600;font-size:.95rem;
+  text-decoration:none;transition:.2s;border:1px solid transparent;cursor:pointer;
+}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#0a0b0f}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(124,156,255,.35)}
+.btn-ghost{background:var(--card);border-color:var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--border-hover);background:var(--card-hover);transform:translateY(-2px)}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-bottom:8px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px}
+.stat .num{font-size:1.7rem;font-weight:800;background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1}
+.stat .lbl{color:var(--muted);font-size:.85rem;margin-top:4px}
+
+section{padding:clamp(36px,6vw,64px) 0}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(1.5rem,3.5vw,2rem);font-weight:800;letter-spacing:-.01em}
+.sec-head .count{font-family:'JetBrains Mono',monospace;color:var(--dim);font-size:.9rem}
+.sec-sub{color:var(--muted);margin-bottom:28px;max-width:680px}
+
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{
+  font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--muted);
+  background:var(--bg-2);border:1px solid var(--border);border-radius:8px;padding:6px 11px;
+}
+.chip.hot{color:var(--accent);border-color:rgba(124,156,255,.35)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:6px}
+.proj{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:22px;display:flex;flex-direction:column;gap:14px;transition:.22s;position:relative;overflow:hidden;
+}
+.proj::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-2));opacity:0;transition:.22s}
+.proj:hover{border-color:var(--border-hover);background:var(--card-hover);transform:translateY(-4px);box-shadow:var(--shadow)}
+.proj:hover::before{opacity:1}
+.proj .top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.proj h3{font-size:1.12rem;font-weight:700;letter-spacing:-.01em;font-family:'JetBrains Mono',monospace}
+.badge{
+  font-size:.72rem;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap;
+  font-family:'JetBrains Mono',monospace;
+}
+.badge.pub{color:var(--green);background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3)}
+.badge.nda{color:var(--amber);background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3)}
+.proj .desc{color:var(--muted);font-size:.94rem;flex:1}
+.proj .role-line{font-size:.86rem;color:var(--dim)}
+.proj .role-line b{color:var(--text);font-weight:600}
+.proj .tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--muted);background:var(--bg-2);border:1px solid var(--border);border-radius:7px;padding:4px 9px}
+.proj .links{display:flex;gap:14px;margin-top:2px}
+.proj .links a{color:var(--accent);text-decoration:none;font-size:.88rem;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.proj .links a:hover{text-decoration:underline}
+.proj .links a svg{width:15px;height:15px}
+.nda-note{color:var(--dim);font-size:.84rem;display:inline-flex;align-items:center;gap:6px}
+
+footer{border-top:1px solid var(--border);padding:40px 0;margin-top:20px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;color:var(--muted)}
+footer a{color:var(--accent);text-decoration:none}
+footer a:hover{text-decoration:underline}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap}
+
+@media (max-width:560px){
+  .topbar .wrap{height:54px}
+  .hero{padding-top:40px}
+  .cta .btn{flex:1;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>SLICK</span>
+      <span class="mono">@5L1CKX</span>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button data-lang="ru" class="active">RU</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">
+      <span class="ru">◆ Открыт к предложениям</span>
+      <span class="en">◆ Open to opportunities</span>
+    </span>
+    <h1>
+      <span class="ru">Александр <span class="accent">Бережанский</span></span>
+      <span class="en">Alexander <span class="accent">Berezhansky</span></span>
+    </h1>
+    <div class="role">
+      <span class="ru">Инженер автоматизации, AI-агентов и QA</span>
+      <span class="en">Automation, AI-Agents & QA Engineer</span>
+      <br>
+      <span class="sub ru">Python · LLM-агенты · n8n · тест-автоматизация</span>
+      <span class="sub en">Python · LLM agents · n8n · test automation</span>
+    </div>
+    <p class="bio">
+      <span class="ru">20 лет, <b>красный диплом</b> Донинтеха по специальности <b>09.02.07 «Информационные системы и программирование»</b>. Делаю инструменты, которые сами разбираются в задаче: агентные тестировщики веб- и мобильных приложений, RAG-боты, транскрибация звонков, генераторы отчётов и n8n-автоматизации. Люблю, когда рутина уходит в код.</span>
+      <span class="en">20 y.o., <b>graduated with honors</b> from Donintech, major <b>09.02.07 “Information Systems & Programming”</b>. I build tools that figure the task out on their own: agentic web & mobile testers, RAG bots, call transcription, report generators and n8n automations. I like turning routine into code.</span>
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/5L1CKX" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+        github.com/5L1CKX
+      </a>
+      <a class="btn btn-ghost" href="https://t.me/C4SlN0" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.9 18.9 19.2c-.23 1.02-.83 1.27-1.68.79l-4.64-3.42-2.24 2.16c-.25.25-.46.46-.94.46l.33-4.73 8.6-7.77c.37-.33-.08-.52-.58-.19L7.44 13.2l-4.57-1.43c-.99-.31-1.01-.99.21-1.47L20.66 3.4c.82-.31 1.54.19 1.28 1.5z"/></svg>
+        <span>Telegram</span>
+      </a>
+      <a class="btn btn-ghost" href="mailto:sasha09012.freelancing@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <span class="ru">Почта</span>
+        <span class="en">Email</span>
+      </a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">20</div><div class="lbl"><span class="ru">лет</span><span class="en">years old</span></div></div>
+      <div class="stat"><div class="num">17</div><div class="lbl"><span class="ru">проектов</span><span class="en">projects</span></div></div>
+      <div class="stat"><div class="num"><span class="ru">красный</span><span class="en">honors</span></div><div class="lbl"><span class="ru">диплом СПО</span><span class="en">college diploma</span></div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl"><span class="ru">года с кодом</span><span class="en">years coding</span></div></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><h2><span class="ru">Стек</span><span class="en">Stack</span></h2></div>
+    <p class="sec-sub">
+      <span class="ru">Инструменты, с которыми работаю по проектам ниже.</span>
+      <span class="en">The tools behind the projects below.</span>
+    </p>
+    <div class="chips">
+      <span class="chip hot">Python</span>
+      <span class="chip hot">LLM / AI-агенты</span>
+      <span class="chip">Playwright</span>
+      <span class="chip">Appium</span>
+      <span class="chip">n8n</span>
+      <span class="chip">RAG</span>
+      <span class="chip">FastAPI</span>
+      <span class="chip">Whisper / ASR</span>
+      <span class="chip">Cerebras · Groq · Mistral</span>
+      <span class="chip">Docker</span>
+      <span class="chip">PowerShell / Batch</span>
+      <span class="chip">HTML / JS</span>
+      <span class="chip">Git</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span class="ru">Публичные проекты</span><span class="en">Public projects</span></h2>
+      <span class="count">// open source</span>
+    </div>
+    <p class="sec-sub">
+      <span class="ru">Можно открыть код прямо сейчас — ссылки ведут в репозитории.</span>
+      <span class="en">Open the code right now — links go straight to the repos.</span>
+    </p>
+    <div class="grid">
+
+      <article class="proj">
+        <div class="top"><h3>discord-kit</h3><span class="badge pub">PUBLIC</span></div>
+        <p class="desc">
+          <span class="ru">Обход блокировок Discord и ускорение соединения на Windows: 14 стратегий обхода DPI (winws + WinDivert) и собственный умный DNS-пикер, который пингует 14 публичных DNS и ставит самый быстрый. Игровой трафик не ломается, откат в один клик.</span>
+          <span class="en">Discord unblocking and connection speed-up on Windows: 14 DPI-bypass strategies (winws + WinDivert) plus a smart DNS picker that pings 14 public resolvers and sets the fastest. Doesn't break game traffic, one-click rollback.</span>
+        </p>
+        <div class="tags"><span class="tag">Batch</span><span class="tag">PowerShell</span><span class="tag">zapret</span><span class="tag">DNS</span></div>
+        <div class="links"><a href="https://github.com/5L1CKX/discord-kit" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg> GitHub</a></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>Streamline-Competitive-Scan</h3><span class="badge pub">PUBLIC</span></div>
+        <p class="desc">
+          <span class="ru">Авто-отчёт конкурентной разведки на n8n: пайплайн сам собирает данные и публикует готовый HTML-отчёт без ручной работы.</span>
+          <span class="en">Automated competitive-scan report on n8n: the pipeline gathers data and publishes a finished HTML report with no manual steps.</span>
+        </p>
+        <div class="tags"><span class="tag">n8n</span><span class="tag">HTML</span><span class="tag">automation</span></div>
+        <div class="links"><a href="https://github.com/5L1CKX/Streamline-Competitive-Scan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg> GitHub</a></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>AI-Platform-Monitor</h3><span class="badge pub">PUBLIC</span></div>
+        <p class="desc">
+          <span class="ru">Мониторинг AI-платформ: отслеживание состояния и изменений с публикацией сводки.</span>
+          <span class="en">AI platform monitor: tracks status and changes across AI platforms and publishes a summary.</span>
+        </p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">monitoring</span></div>
+        <div class="links"><a href="https://github.com/5L1CKX/AI-Platform-Monitor" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg> GitHub</a></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>cameras-map</h3><span class="badge pub">PUBLIC</span></div>
+        <p class="desc">
+          <span class="ru">Интерактивная карта камер по югу России: сбор точек и отображение на карте в браузере.</span>
+          <span class="en">Interactive camera map for southern Russia: collects points and renders them on a browser map.</span>
+        </p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">JS</span><span class="tag">maps</span></div>
+        <div class="links"><a href="https://github.com/5L1CKX/cameras-map" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg> GitHub</a></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>piter-marshrut</h3><span class="badge pub">PUBLIC</span></div>
+        <p class="desc">
+          <span class="ru">Маршрут по Санкт-Петербургу: спланированный путь с точками на интерактивной карте.</span>
+          <span class="en">A Saint Petersburg route: a planned itinerary with points on an interactive map.</span>
+        </p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">JS</span><span class="tag">maps</span></div>
+        <div class="links"><a href="https://github.com/5L1CKX/piter-marshrut" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg> GitHub</a></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span class="ru">Проекты под NDA</span><span class="en">Projects under NDA</span></h2>
+      <span class="count">// private repos</span>
+    </div>
+    <p class="sec-sub">
+      <span class="ru">Коммерческая разработка — репозитории закрыты, имена заказчиков и внутренние данные скрыты. Описываю суть, стек и свою роль. Детали и код готов показать на созвоне.</span>
+      <span class="en">Commercial work — repos are private, client names and internal data are withheld. Here's the essence, the stack and my role. Happy to walk through details and code on a call.</span>
+    </p>
+    <div class="grid">
+
+      <article class="proj">
+        <div class="top"><h3>agentic-web-tester</h3><span class="badge nda">NDA</span></div>
+        <p class="desc">
+          <span class="ru">Универсальный агентный тестировщик веб-приложений. Кладёшь в любой проект — сам разбирается, как его запустить, изучает UI из живого DOM, пишет план тестирования, прокликивает интерфейс и выносит вердикт по каждому шагу. Playwright — руки, LLM — мозг; никакого захардкоженного знания о приложении.</span>
+          <span class="en">A universal agentic web-app tester. Drop it into any project — it works out how to launch it, learns the UI from the live DOM, writes a test plan, clicks through and gives a verdict per step. Playwright is the hands, the LLM is the brain; zero hard-coded app knowledge.</span>
+        </p>
+        <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком</span><span class="en"><b>Role:</b> sole author</span></div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Playwright</span><span class="tag">LLM</span><span class="tag">Cerebras/Groq/Mistral</span></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>portal-tester</h3><span class="badge nda">NDA</span></div>
+        <p class="desc">
+          <span class="ru">Агентные health-check веб-порталов телеком-заказчика. Что проверять — описываешь в YAML-чеклисте (скорость логина, время загрузки против порогов, доступность разделов); агент сам находит путь в живом UI, измеряет и ставит OK/NOK/ERROR по каждому пункту. Self-heal локаторов при изменении интерфейса; веб + Android (Appium) в одном прогоне.</span>
+          <span class="en">Agentic health-checks for a telecom client's web portals. You describe what to verify in a YAML checklist (login speed, page-load times vs thresholds, view availability); the agent finds the path in the live UI, measures it and reports OK/NOK/ERROR per item. Self-healing locators when the UI drifts; web + Android (Appium) in a single run.</span>
+        </p>
+        <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком</span><span class="en"><b>Role:</b> sole author</span></div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Playwright</span><span class="tag">Appium</span><span class="tag">LLM</span></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>mobile-tester-hybrid</h3><span class="badge nda">NDA</span></div>
+        <p class="desc">
+          <span class="ru">Гибридный тестировщик Android-приложения. Сценарий пишется обычным текстом на английском, LLM компилит его один раз в детерминированный план, а гоняет его уже детерминированный движок по точным resource-id. Модель никогда не водит приложение вживую — отсюда точные тайминги, повторяемость и честные скриншоты без «блужданий».</span>
+          <span class="en">A hybrid Android app tester. Scenarios are written in plain English, the LLM compiles them once into a deterministic plan, and a deterministic engine runs it by exact resource-ids. The model never drives the app live — hence accurate timings, repeatable runs and honest screenshots with no "wandering".</span>
+        </p>
+        <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком</span><span class="en"><b>Role:</b> sole author</span></div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Appium</span><span class="tag">LLM</span><span class="tag">Android</span></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>calls-transcriber</h3><span class="badge nda">NDA</span></div>
+        <p class="desc">
+          <span class="ru">Превращает запись звонка в текстовый транскрипт с таймкодами и разделением по говорящим (диаризация). Бросил файл в папку — получил готовый .txt. Работает локально и бесплатно, платные API не нужны, видеокарта желательна, но не обязательна.</span>
+          <span class="en">Turns a call recording into a text transcript with timecodes and speaker separation (diarization). Drop a file in a folder — get a ready .txt. Runs locally and free, no paid APIs, GPU optional.</span>
+        </p>
+        <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком</span><span class="en"><b>Role:</b> sole author</span></div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Whisper/ASR</span><span class="tag">diarization</span></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>tt-assistant</h3><span class="badge nda">NDA</span></div>
+        <p class="desc">
+          <span class="ru">Ассистент заполнения trouble-ticket'ов. Пользователь описывает проблему словами или жмёт кнопку — на выходе корректный JSON полей тикета. Построен на реальных моделях заказчика; метод: разбор конфигов моделей, «зелёные» справочные таблицы и промпт-конвейер.</span>
+          <span class="en">A trouble-ticket filling assistant. The user describes the problem in words or clicks a button — the output is a valid JSON of ticket fields. Built on the client's real models; method: parsing model configs, "green" reference tables and a prompt pipeline.</span>
+        </p>
+        <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком</span><span class="en"><b>Role:</b> sole author</span></div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">prompt engineering</span></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>prezentation-optimization</h3><span class="badge nda">NDA</span></div>
+        <p class="desc">
+          <span class="ru">Генератор статус-отчёта (слайды) из живых данных портала вместо ручной сборки. Скрипт логинится, тянет все источники, считает метрики и собирает готовый deck — заменяет день кликанья, экспорта в таблицы и скриншотов. Корректно помечает периоды с неполными данными.</span>
+          <span class="en">A status-report (deck) generator built from live portal data instead of by hand. It signs in, pulls every source, computes metrics and produces a finished deck — replacing a day of clicking, exporting and screenshotting. Honestly flags periods with incomplete data.</span>
+        </p>
+        <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком</span><span class="en"><b>Role:</b> sole author</span></div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">reporting</span><span class="tag">data</span></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>hr-rag-bot</h3><span class="badge nda">NDA</span></div>
+        <p class="desc">
+          <span class="ru">RAG-бот по внутренней HR-базе: отвечает на вопросы сотрудников по документам компании с опорой на найденные фрагменты, а не на «фантазии» модели.</span>
+          <span class="en">A RAG bot over an internal HR knowledge base: answers employees' questions from company documents, grounded in retrieved passages rather than the model's guesses.</span>
+        </p>
+        <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком</span><span class="en"><b>Role:</b> sole author</span></div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">LLM</span><span class="tag">embeddings</span></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>bs-fueling</h3><span class="badge nda">NDA</span></div>
+        <p class="desc">
+          <span class="ru">Система контроля доставки топлива (центр управления): конвейер маршрутизации, AI-аналитика, REST/SSE API, полный комплект техдокументации и Docker-развёртывание. Построил весь UI, переписал под себя серверную Python-логику начиная с ранней версии, вёл документацию.</span>
+          <span class="en">A fuel-delivery control system (control center): routing pipeline, AI analytics, REST/SSE API, full technical documentation and Docker deployment. Built the entire UI, reworked the server-side Python logic from an early version, and drove the docs.</span>
+        </p>
+        <div class="role-line"><span class="ru"><b>Роль:</b> основной разработчик</span><span class="en"><b>Role:</b> lead developer</span></div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">SSE</span><span class="tag">Docker</span></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>ai-event-analysis</h3><span class="badge nda">NDA</span></div>
+        <p class="desc">
+          <span class="ru">Анализ событий с помощью AI: обработка входных данных о событиях и извлечение выводов средствами LLM.</span>
+          <span class="en">AI-powered event analysis: processing event data and extracting insights with LLMs.</span>
+        </p>
+        <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком</span><span class="en"><b>Role:</b> sole author</span></div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">data</span></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>n8n workflows</h3><span class="badge nda">NDA</span></div>
+        <p class="desc">
+          <span class="ru">16 боевых n8n-флоу автоматизации: мультиагентные оркестрации, RAG-загрузчики, конвейеры обработки созвонов (транскрипт → заметки → Google Sheets), FAQ-агенты на вебхуках, голосовой ответчик, дайджесты новостей, еженедельные мониторинги AI-платформ и валидаторы данных в таблицах.</span>
+          <span class="en">16 production n8n automation flows: multi-agent orchestrations, RAG loaders, call-processing pipelines (transcript → notes → Google Sheets), webhook FAQ agents, a voice-reply bot, news digests, weekly AI-platform monitors and spreadsheet data validators.</span>
+        </p>
+        <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком · развёрнуто в закрытом self-hosted n8n заказчика; код, данные и секреты — под NDA</span><span class="en"><b>Role:</b> sole author · deployed on the client's private self-hosted n8n; code, data and secrets under NDA</span></div>
+        <div class="tags"><span class="tag">n8n</span><span class="tag">AI-агенты</span><span class="tag">RAG</span><span class="tag">webhooks</span><span class="tag">Google Sheets</span></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>wsp — WorkSpace of Projects</h3><span class="badge nda">NDA</span></div>
+        <p class="desc">
+          <span class="ru">Агентный воркспейс для онбординга на незнакомые репозитории: наводишь на проект — он помогает понять его, запустить и вносить изменения. Три фазы (подключить и запустить → доказать, что работает → метод внесения правок) и набор tool-neutral скиллов. Способ отдать чужую кодовую базу человеку, который её впервые видит.</span>
+          <span class="en">An agent workspace for onboarding onto unfamiliar repositories: point it at a project and it helps you understand, run and change it. Three phases (connect & run → prove it works → the change method) and a set of tool-neutral skills. A way to hand a codebase to someone seeing it for the first time.</span>
+        </p>
+        <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком</span><span class="en"><b>Role:</b> sole author</span></div>
+        <div class="tags"><span class="tag">Shell</span><span class="tag">agents</span><span class="tag">tooling</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div style="font-weight:700">Александр Бережанский · <span class="mono" style="color:var(--muted)">SLICK / @5L1CKX</span></div>
+      <div style="color:var(--dim);font-size:.9rem;margin-top:4px">
+        <span class="ru">Открыт к предложениям и интересным задачам.</span>
+        <span class="en">Open to opportunities and interesting problems.</span>
+      </div>
+    </div>
+    <div class="foot-links">
+      <a href="https://github.com/5L1CKX" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://t.me/C4SlN0" target="_blank" rel="noopener">Telegram</a>
+      <a href="mailto:sasha09012.freelancing@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var buttons=document.querySelectorAll('.lang-toggle button');
+  function set(lang){
+    root.classList.remove('lang-ru','lang-en');
+    root.classList.add('lang-'+lang);
+    root.setAttribute('lang',lang);
+    buttons.forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang);});
+    try{localStorage.setItem('slick_lang',lang);}catch(e){}
+  }
+  buttons.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.lang);});});
+  var saved='ru';
+  try{saved=localStorage.getItem('slick_lang')||'ru';}catch(e){}
+  set(saved);
+})();
+</script>
+
+</body>
+</html>
