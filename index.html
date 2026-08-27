@@ -137,6 +137,37 @@ section{padding:clamp(36px,6vw,64px) 0}
 .proj .links a svg{width:15px;height:15px}
 .nda-note{color:var(--dim);font-size:.84rem;display:inline-flex;align-items:center;gap:6px}
 
+.featured{
+  position:relative;border-radius:20px;padding:1px;overflow:hidden;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2),var(--accent));
+  box-shadow:0 18px 50px rgba(124,156,255,.18);
+}
+.featured .inner{
+  background:linear-gradient(180deg,#15171f,#111319);
+  border-radius:19px;padding:clamp(24px,4vw,38px);
+  display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(20px,4vw,40px);
+}
+.featured .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.featured h3{font-family:'JetBrains Mono',monospace;font-size:clamp(1.4rem,3vw,1.9rem);font-weight:700;margin-bottom:6px;letter-spacing:-.01em}
+.featured .tagline{color:var(--accent);font-weight:600;margin-bottom:16px}
+.featured p{color:var(--muted);margin-bottom:14px}
+.featured p b{color:var(--text);font-weight:600}
+.featured .flow{
+  list-style:none;display:flex;flex-direction:column;gap:12px;
+}
+.featured .flow li{
+  display:flex;gap:12px;align-items:flex-start;font-size:.93rem;color:var(--text);
+  background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;
+}
+.featured .flow .n{
+  flex:none;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;
+  font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:700;color:#0a0b0f;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+}
+.featured .flow small{display:block;color:var(--dim);font-weight:400;font-size:.82rem;margin-top:2px}
+.badge.star{color:#0a0b0f;background:linear-gradient(135deg,var(--accent),var(--accent-2));border:none}
+@media (max-width:760px){.featured .inner{grid-template-columns:1fr}}
+
 footer{border-top:1px solid var(--border);padding:40px 0;margin-top:20px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;color:var(--muted)}
 footer a{color:var(--accent);text-decoration:none}
@@ -235,6 +266,55 @@ footer a:hover{text-decoration:underline}
       <span class="chip">PowerShell / Batch</span>
       <span class="chip">HTML / JS</span>
       <span class="chip">Git</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2><span class="ru">Главный проект</span><span class="en">Flagship project</span></h2>
+      <span class="count">// in active development</span>
+    </div>
+    <p class="sec-sub">
+      <span class="ru">Над чем работаю сейчас — самый крупный проект, связывающий остальные в один поток.</span>
+      <span class="en">What I'm building right now — the largest project, tying the others into one flow.</span>
+    </p>
+    <div class="featured">
+      <div class="inner">
+        <div>
+          <div class="badges">
+            <span class="badge star">★ FLAGSHIP</span>
+            <span class="badge nda">NDA</span>
+          </div>
+          <h3>Ave Alexandria</h3>
+          <div class="tagline">
+            <span class="ru">Единый пульт автоматизации рабочего процесса компании</span>
+            <span class="en">One control panel for automating a company's workflow</span>
+          </div>
+          <p>
+            <span class="ru">Одна мысль, из которой растёт всё остальное: после совещания не нужно вручную гонять пять инструментов по очереди. Записал разговор — система сама расшифровала, разобрала на артефакты и задачи, показала человеку на проверку, а после согласия занесла задачи в трекер и разослала исполнителям — <b>каждому в свой канал и на своём языке</b>. И всё это видно и управляется из одного окна, где совещания, задачи, люди и проекты связаны <b>графом</b>.</span>
+            <span class="en">One idea everything grows from: after a meeting you shouldn't run five tools by hand. Record the call — the system transcribes it, breaks it into artifacts and tasks, shows a human for review, and once approved pushes tasks into the tracker and dispatches them to executors — <b>each in their own channel and language</b>. All of it visible and managed from a single window where meetings, tasks, people and projects are linked by a <b>graph</b>.</span>
+          </p>
+          <p>
+            <span class="ru"><b>Архитектура:</b> Python-оркестратор (конвейер обработки, граф контекста, состояние в SQLite, FastAPI-API + CLI, headless LLM-раннер) и веб на <b>Vite + React + TypeScript</b> с интерактивным графом на <b>Cytoscape</b> и просмотрщиком документов. Не переписывает готовое, а склеивает проверенные кирпичи (транскрибация, разбор транскриптов, трекер) в один автоматический поток и надстраивает сверху граф и веб.</span>
+            <span class="en"><b>Architecture:</b> a Python orchestrator (processing pipeline, context graph, SQLite state, FastAPI API + CLI, headless LLM runner) and a <b>Vite + React + TypeScript</b> web app with an interactive <b>Cytoscape</b> graph and a document viewer. It doesn't rewrite what works — it glues proven building blocks (transcription, transcript parsing, tracker) into one automatic flow and adds the graph and web on top.</span>
+          </p>
+          <div class="role-line" style="margin-top:4px"><span class="ru"><b>Роль:</b> автор и архитектор · рабочий прототип, в активной разработке</span><span class="en"><b>Role:</b> author & architect · working prototype, in active development</span></div>
+          <div class="tags" style="margin-top:12px">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Cytoscape</span><span class="tag">SQLite</span><span class="tag">LLM-оркестрация</span><span class="tag">graph</span>
+          </div>
+        </div>
+        <div>
+          <ol class="flow">
+            <li><span class="n">1</span><div><span class="ru">Запись созвона → транскрипт</span><span class="en">Call recording → transcript</span><small><span class="ru">таймкоды и говорящие, локально</span><span class="en">timecodes & speakers, local</span></small></div></li>
+            <li><span class="n">2</span><div><span class="ru">Разбор на артефакты и задачи</span><span class="en">Parsed into artifacts & tasks</span><small><span class="ru">заметки, решения, ACT-###</span><span class="en">notes, decisions, ACT-###</span></small></div></li>
+            <li><span class="n">3</span><div><span class="ru">Проверка человеком</span><span class="en">Human review</span><small><span class="ru">граф и документы в одном окне</span><span class="en">graph & docs in one window</span></small></div></li>
+            <li><span class="n">4</span><div><span class="ru">Задачи → трекер</span><span class="en">Tasks → tracker</span><small><span class="ru">нормализация исполнителей</span><span class="en">executor normalization</span></small></div></li>
+            <li><span class="n">5</span><div><span class="ru">Раздача исполнителям</span><span class="en">Dispatch to executors</span><small><span class="ru">каждому в свой канал и язык</span><span class="en">each in their channel & language</span></small></div></li>
+          </ol>
+        </div>
+      </div>
     </div>
   </div>
 </section>
