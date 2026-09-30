@@ -239,7 +239,7 @@ footer a:hover{text-decoration:underline}
     </div>
     <div class="stats">
       <div class="stat"><div class="num">20</div><div class="lbl"><span class="ru">лет</span><span class="en">years old</span></div></div>
-      <div class="stat"><div class="num">18</div><div class="lbl"><span class="ru">проектов</span><span class="en">projects</span></div></div>
+      <div class="stat"><div class="num" id="proj-count">18</div><div class="lbl"><span class="ru">проектов</span><span class="en">projects</span></div></div>
       <div class="stat"><div class="num"><span class="ru">красный</span><span class="en">honors</span></div><div class="lbl"><span class="ru">диплом СПО</span><span class="en">college diploma</span></div></div>
       <div class="stat"><div class="num">3</div><div class="lbl"><span class="ru">года с кодом</span><span class="en">years coding</span></div></div>
     </div>
@@ -250,25 +250,17 @@ footer a:hover{text-decoration:underline}
   <div class="wrap">
     <div class="sec-head"><h2><span class="ru">Стек</span><span class="en">Stack</span></h2></div>
     <p class="sec-sub">
-      <span class="ru">Инструменты, с которыми работаю по проектам ниже.</span>
-      <span class="en">The tools behind the projects below.</span>
+      <span class="ru">Инструменты, с которыми работаю по проектам ниже. Список собирается из тегов проектов.</span>
+      <span class="en">The tools behind the projects below. The list is built from the project tags.</span>
     </p>
-    <div class="chips">
+    <div class="chips" id="stack">
       <span class="chip hot">Python</span>
-      <span class="chip hot">LLM / AI-агенты</span>
+      <span class="chip hot">LLM</span>
+      <span class="chip hot">AI-агенты</span>
       <span class="chip hot">Prompt Engineering</span>
       <span class="chip hot">Gemini</span>
-      <span class="chip hot">Claude / Claude Code skills</span>
-      <span class="chip">Playwright</span>
-      <span class="chip">Appium</span>
-      <span class="chip">n8n</span>
-      <span class="chip">RAG</span>
-      <span class="chip">FastAPI</span>
-      <span class="chip">Whisper / ASR</span>
-      <span class="chip">Cerebras · Groq · Mistral</span>
-      <span class="chip">Docker</span>
-      <span class="chip">PowerShell / Batch</span>
-      <span class="chip">HTML / JS</span>
+      <span class="chip hot">Claude</span>
+      <span class="chip hot">Claude Code skills</span>
       <span class="chip">Git</span>
     </div>
   </div>
@@ -306,7 +298,7 @@ footer a:hover{text-decoration:underline}
           </p>
           <div class="role-line" style="margin-top:4px"><span class="ru"><b>Роль:</b> автор и архитектор · рабочий прототип, в активной разработке</span><span class="en"><b>Role:</b> author & architect · working prototype, in active development</span></div>
           <div class="tags" style="margin-top:12px">
-            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Cytoscape</span><span class="tag">SQLite</span><span class="tag">LLM-оркестрация</span><span class="tag">graph</span>
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Cytoscape</span><span class="tag">SQLite</span><span class="tag">LLM-оркестрация</span><span class="tag topic">graph</span>
           </div>
         </div>
         <div>
@@ -378,7 +370,7 @@ footer a:hover{text-decoration:underline}
           <span class="ru">Авто-отчёт конкурентной разведки на n8n: пайплайн сам собирает данные и публикует готовый HTML-отчёт без ручной работы.</span>
           <span class="en">Automated competitive-scan report on n8n: the pipeline gathers data and publishes a finished HTML report with no manual steps.</span>
         </p>
-        <div class="tags"><span class="tag">n8n</span><span class="tag">HTML</span><span class="tag">automation</span></div>
+        <div class="tags"><span class="tag">n8n</span><span class="tag">HTML</span><span class="tag topic">automation</span></div>
         <div class="links"><a href="https://github.com/5L1CKX/Streamline-Competitive-Scan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg> GitHub</a></div>
       </article>
 
@@ -388,7 +380,7 @@ footer a:hover{text-decoration:underline}
           <span class="ru">Мониторинг AI-платформ: отслеживание состояния и изменений с публикацией сводки.</span>
           <span class="en">AI platform monitor: tracks status and changes across AI platforms and publishes a summary.</span>
         </p>
-        <div class="tags"><span class="tag">HTML</span><span class="tag">monitoring</span></div>
+        <div class="tags"><span class="tag">HTML</span><span class="tag topic">monitoring</span></div>
         <div class="links"><a href="https://github.com/5L1CKX/AI-Platform-Monitor" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg> GitHub</a></div>
       </article>
 
@@ -398,7 +390,7 @@ footer a:hover{text-decoration:underline}
           <span class="ru">Интерактивная карта камер по югу России: сбор точек и отображение на карте в браузере.</span>
           <span class="en">Interactive camera map for southern Russia: collects points and renders them on a browser map.</span>
         </p>
-        <div class="tags"><span class="tag">HTML</span><span class="tag">JS</span><span class="tag">maps</span></div>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">JS</span><span class="tag topic">maps</span></div>
         <div class="links"><a href="https://github.com/5L1CKX/cameras-map" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg> GitHub</a></div>
       </article>
 
@@ -408,7 +400,7 @@ footer a:hover{text-decoration:underline}
           <span class="ru">Маршрут по Санкт-Петербургу: спланированный путь с точками на интерактивной карте.</span>
           <span class="en">A Saint Petersburg route: a planned itinerary with points on an interactive map.</span>
         </p>
-        <div class="tags"><span class="tag">HTML</span><span class="tag">JS</span><span class="tag">maps</span></div>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">JS</span><span class="tag topic">maps</span></div>
         <div class="links"><a href="https://github.com/5L1CKX/piter-marshrut" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.36 9.36 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg> GitHub</a></div>
       </article>
 
@@ -485,7 +477,7 @@ footer a:hover{text-decoration:underline}
           <span class="en">A status-report (deck) generator built from live portal data instead of by hand. It signs in, pulls every source, computes metrics and produces a finished deck — replacing a day of clicking, exporting and screenshotting. Honestly flags periods with incomplete data.</span>
         </p>
         <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком</span><span class="en"><b>Role:</b> sole author</span></div>
-        <div class="tags"><span class="tag">Python</span><span class="tag">reporting</span><span class="tag">data</span></div>
+        <div class="tags"><span class="tag">Python</span><span class="tag topic">reporting</span><span class="tag topic">data</span></div>
       </article>
 
       <article class="proj">
@@ -515,7 +507,7 @@ footer a:hover{text-decoration:underline}
           <span class="en">AI-powered event analysis: processing event data and extracting insights with LLMs.</span>
         </p>
         <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком</span><span class="en"><b>Role:</b> sole author</span></div>
-        <div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">data</span></div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag topic">data</span></div>
       </article>
 
       <article class="proj">
@@ -535,7 +527,7 @@ footer a:hover{text-decoration:underline}
           <span class="en">An agent workspace for onboarding onto unfamiliar repositories: point it at a project and it helps you understand, run and change it. Three phases (connect & run → prove it works → the change method) and a set of tool-neutral skills. A way to hand a codebase to someone seeing it for the first time.</span>
         </p>
         <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком</span><span class="en"><b>Role:</b> sole author</span></div>
-        <div class="tags"><span class="tag">Shell</span><span class="tag">agents</span><span class="tag">tooling</span></div>
+        <div class="tags"><span class="tag">Shell</span><span class="tag topic">agents</span><span class="tag topic">tooling</span></div>
       </article>
 
     </div>
@@ -558,6 +550,39 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var box=document.getElementById('stack');
+  var projects=document.querySelectorAll('.proj, .featured');
+  var counter=document.getElementById('proj-count');
+  if(counter)counter.textContent=projects.length;
+  if(!box)return;
+  function keyOf(s){return s.trim().replace(/\s+/g,' ').toLowerCase();}
+  var known={};
+  box.querySelectorAll('.chip').forEach(function(c){known[keyOf(c.textContent)]=true;});
+  var found={},order=[];
+  projects.forEach(function(p){
+    var inProject={};
+    p.querySelectorAll('.tag:not(.topic)').forEach(function(t){
+      t.textContent.split(/\s*[\/·]\s*/).forEach(function(name){
+        name=name.trim();
+        var k=keyOf(name);
+        if(!name||known[k]||inProject[k])return;
+        inProject[k]=true;
+        if(!found[k]){found[k]={name:name,n:0};order.push(k);}
+        found[k].n++;
+      });
+    });
+  });
+  order.sort(function(a,b){return found[b].n-found[a].n;}).forEach(function(k){
+    var chip=document.createElement('span');
+    chip.className='chip';
+    chip.textContent=found[k].name;
+    box.appendChild(chip);
+  });
+})();
+</script>
 
 <script>
 (function(){
