@@ -127,7 +127,7 @@ section{padding:clamp(36px,6vw,64px) 0}
 .badge.pub{color:var(--green);background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.3)}
 .badge.nda{color:var(--amber);background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3)}
 .badge.live{color:var(--accent-2);background:color-mix(in srgb,var(--accent-2) 12%,transparent);border:1px solid color-mix(in srgb,var(--accent-2) 35%,transparent)}
-.grid.solo{grid-template-columns:1fr}
+.grid.live{grid-template-columns:repeat(auto-fit,minmax(min(100%,26rem),1fr))}
 .proj .desc{color:var(--muted);font-size:.94rem;flex:1}
 .proj .role-line,.featured .role-line{font-size:.86rem;color:var(--dim)}
 .proj .role-line b,.featured .role-line b{color:var(--text);font-weight:600}
@@ -318,14 +318,14 @@ footer a:hover{text-decoration:underline}
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <h2><span class="ru">Сайт в продакшене</span><span class="en">Live in production</span></h2>
+      <h2><span class="ru">Сайты в продакшене</span><span class="en">Live in production</span></h2>
       <span class="count">// client work</span>
     </div>
     <p class="sec-sub">
-      <span class="ru">Коммерческий заказ под ключ — от вёрстки до сервера. Код закрыт, сайт можно открыть прямо сейчас.</span>
-      <span class="en">A turnkey commercial job — from layout to server. The code is private, the site is live right now.</span>
+      <span class="ru">Коммерческие заказы под ключ — от вёрстки до сервера. Код закрыт, сайты можно открыть прямо сейчас.</span>
+      <span class="en">Turnkey commercial jobs — from layout to server. The code is private, the sites are live right now.</span>
     </p>
-    <div class="grid solo">
+    <div class="grid live">
 
       <article class="proj">
         <div class="top"><h3>ИСТЕРИКА</h3><span class="badge live">LIVE</span></div>
@@ -336,6 +336,17 @@ footer a:hover{text-decoration:underline}
         <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком — дизайн, код, сервер, деплой и перенос домена</span><span class="en"><b>Role:</b> sole author — design, code, server, deployment and domain migration</span></div>
         <div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Tailwind</span><span class="tag">SQLite</span><span class="tag">Docker</span><span class="tag">Caddy</span><span class="tag">Cloudflare Workers</span><span class="tag">Telegram</span></div>
         <div class="links"><a href="https://isterika-shop.ru" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg> isterika-shop.ru</a></div>
+      </article>
+
+      <article class="proj">
+        <div class="top"><h3>SFERA</h3><span class="badge live">LIVE</span></div>
+        <p class="desc">
+          <span class="ru">Сайт производства в Батайске: наклейки, УФ ДТФ, мягкие магниты, сублимация, шильды и лазерная гравировка. У каждого направления своя страница, плюс каталог, галерея образцов с листанием фото свайпом и стрелками, советы и инструкции. Маскот Сферик — анимированный 3D-глобус на Canvas: моргает, следит взглядом за курсором и подсказывает по разделам при прокрутке. Форма заявки с загрузкой макетов и проверкой файлов по сигнатурам, сквозные номера заявок, уведомления в Telegram без персональных данных. Тексты, направления, каталог, цены и фото правятся прямо на страницах, картинки сами ужимаются при загрузке. Под 152-ФЗ: согласие с версией текста, Метрика и карта только после разрешения cookie.</span>
+          <span class="en">A website for a print shop in Bataysk: stickers, UV DTF, soft magnets, sublimation, nameplates and laser engraving. Every service has its own page, plus a catalog, a samples gallery with swipe and arrow-key navigation, tips and guides. The mascot Spheric is an animated 3D globe on Canvas: it blinks, follows the cursor with its eyes and gives hints section by section as you scroll. An order form with artwork uploads checked by file signatures, sequential order numbers, Telegram notifications without personal data. Texts, services, catalog, prices and photos are edited right on the page, with images optimized on upload. Compliant with 152-FZ: versioned consent, analytics and maps only after cookie opt-in.</span>
+        </p>
+        <div class="role-line"><span class="ru"><b>Роль:</b> автор целиком — дизайн, код, сервер и деплой</span><span class="en"><b>Role:</b> sole author — design, code, server and deployment</span></div>
+        <div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Tailwind</span><span class="tag">GSAP</span><span class="tag">Canvas</span><span class="tag">SQLite</span><span class="tag">sharp</span><span class="tag">Docker</span><span class="tag">Caddy</span><span class="tag">Telegram</span></div>
+        <div class="links"><a href="https://sf-ra.ru" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg> sf-ra.ru</a></div>
       </article>
 
     </div>
